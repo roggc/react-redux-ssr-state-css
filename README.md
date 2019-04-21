@@ -1,9 +1,7 @@
-## react-redux-ssr-state
+## react-redux-ssr-state-css
 
-this is an app built upon the **react-redux-ssr** app.
+this is an app built upon the **react-redux-ssr-state** app.
 
-this app adds navigation capabilities through **state** history.
+this app adds css modules capabilities to the previous app.
 
-on reloading, the app is server side rendered with the same **state** it was previous to reloading. that's it, keeps the **state** on reloading (server side rendering).
-
-you can visit the app running on https://react-redux-ssr-state.herokuapp.com.
+you can visit the app running on ...
