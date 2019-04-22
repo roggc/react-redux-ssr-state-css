@@ -1,10 +1,10 @@
-//src/client
+//src/entry/client
 
 import React from 'react'
 import {hydrate} from 'react-dom'
 import {Provider} from 'react-redux'
-import {getStore} from './store/index'
-import App from './components/app/index'
+import {getStore} from '../store/index'
+import App from '../components/app/index'
 
 const render= (state)=>
 {

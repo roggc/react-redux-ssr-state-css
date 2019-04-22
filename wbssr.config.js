@@ -1,38 +1,27 @@
-//wbclient.config.js
-
 const path = require('path');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const webpack = require('webpack');
+var nodeExternals = require('webpack-node-externals');
 
 module.exports =
 {
+  target: 'node',
+  externals: [nodeExternals()],
   entry:
   {
-    client: './src/entry/client.js'
+    ssr: './src/entry/ssr.js'
   },
   output:
   {
-    path: path.join(__dirname, 'out/client'),
-    filename: './public/[name].[chunkhash].js'
+    path: path.join(__dirname, 'out/server'),
+    filename: './[name].bundle.js',
+    libraryTarget: 'umd'
   },
   module:
   {
     rules:
     [
-      {
-        test: /\.(html)$/,
-        exclude: /node_modules/,
-        use:
-        {
-          loader: 'html-loader',
-          options:
-          {
-            minimize: true
-          }
-        }
-      },
       {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
@@ -66,19 +55,9 @@ module.exports =
     new MiniCssExtractPlugin
     (
       {
-        filename: './public/[name].[contenthash].css',
-        chunkFilename: './public/[id].[contenthash].css'
+        filename: './[name].bundle.css'
       }
-    ),
-    new HtmlWebpackPlugin
-    (
-      {
-        hash:true,
-        template: './src/html/index.html',
-        filename: 'index.html'
-      }
-    ),
-    new webpack.HashedModuleIdsPlugin()
+    )
   ],
   watchOptions:
   {

@@ -7,11 +7,14 @@ module.exports=
 {
   target: 'node',
   externals: [nodeExternals()],
-  entry: './src/server.js',
+  entry:
+  {
+    server: './src/entry/server.js'
+  },
   output:
   {
     path: path.join(__dirname,'out/server'),
-    filename: 'server.js'
+    filename: '[name].bundle.js'
   },
   module:
   {
