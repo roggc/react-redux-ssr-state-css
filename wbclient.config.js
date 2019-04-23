@@ -6,6 +6,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const webpack = require('webpack');
 
+const devMode = process.env.NODE_ENV !== 'production';
 module.exports =
 {
   entry:
@@ -29,7 +30,7 @@ module.exports =
           loader: 'html-loader',
           options:
           {
-            minimize: true
+            minimize: !devMode
           }
         }
       },
