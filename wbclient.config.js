@@ -78,7 +78,10 @@ module.exports =
         filename: 'index.html'
       }
     ),
-    new webpack.HashedModuleIdsPlugin()
+    new webpack.HashedModuleIdsPlugin(),
+    new webpack.DefinePlugin({
+      __isClient__: true
+    }),
   ],
   watchOptions:
   {

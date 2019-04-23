@@ -1,4 +1,4 @@
-console.log('src/actions/index')
+__isClient__||!__devMode__||console.log('src/actions/index')
 
 import * as types from './types'
 

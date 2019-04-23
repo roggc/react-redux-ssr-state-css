@@ -1,7 +1,7 @@
-console.log('src/entry/server')
+!__devMode||console.log('src/entry/server')
 
 import express from 'express'
-import {handleRender} from '../../out/server/ssr.bundle'
+import {handleRender, __devMode} from '../../out/server/ssr.bundle'
 
 const app = express()
 const port = process.env.PORT || 3000

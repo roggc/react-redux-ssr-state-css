@@ -4,6 +4,7 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 const webpack = require('webpack');
 var nodeExternals = require('webpack-node-externals');
 
+const devMode = process.env.NODE_ENV !== 'production';
 module.exports =
 {
   target: 'node',
@@ -57,7 +58,11 @@ module.exports =
       {
         filename: './[name].bundle.css'
       }
-    )
+    ),
+    new webpack.DefinePlugin({
+      __isClient__: false,
+      __devMode__: devMode
+    }),
   ],
   watchOptions:
   {

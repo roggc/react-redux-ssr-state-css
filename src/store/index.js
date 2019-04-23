@@ -1,4 +1,4 @@
-console.log('src/store/index')
+__isClient__||!__devMode__||console.log('src/store/index')
 
 import {createStore, applyMiddleware} from 'redux'
 import thunk from 'redux-thunk'

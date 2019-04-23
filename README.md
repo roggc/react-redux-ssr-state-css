@@ -1,7 +1,5 @@
 ## react-redux-ssr-state-css
 
-this is an app built upon the **react-redux-ssr-state** app.
+this app is a boilerplate for developing **react redux ssr** apps with css and sass style modules.
 
-this app adds css modules capabilities to the previous app.
-
-you can visit the app running on ...
+but not only this, it adds another feature. it keeps **state** on reloading and allows navigation through state history changes in the client side.

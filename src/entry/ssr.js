@@ -1,3 +1,4 @@
+!__devMode__||console.log('src/entry/ssr')
 
 import fs from 'fs'
 import path from 'path'
@@ -47,3 +48,5 @@ export const handleRender=(req, res)=> {
       )
     })
   }
+
+  export const __devMode=__devMode__

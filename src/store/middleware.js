@@ -1,4 +1,4 @@
-console.log('src/store/middleware')
+__isClient__||!__devMode__||console.log('src/store/middleware')
 
 import * as types from '../actions/types'
 

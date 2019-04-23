@@ -1,4 +1,4 @@
-console.log('src/reducers/index')
+__isClient__||!__devMode__||console.log('src/reducers/index')
 
 import {combineReducers} from 'redux'
 import * as types from '../actions/types'
